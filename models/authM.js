@@ -71,6 +71,6 @@ authSchema.methods.generateTokens = async function () {
     return token
 }
 
-const Auth = mongoose.model('auth', authSchema)
+const Auth = mongoose.model('eLerningPlateform', authSchema)
 
 export default Auth
