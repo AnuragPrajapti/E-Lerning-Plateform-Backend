@@ -8,7 +8,7 @@ const schema = {
         firstName: joi.string().max(100).required(),
         lastName: joi.string().max(100).required(),
         email: joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com', 'in'] } }),
-        password: joi.string().pattern(new RegExp("^[a-zA-Z0-9]{3,30}$")).required(),
+        password: joi.string().required(),
         cPassword: joi.any().equal(joi.ref('password')).required().label('Confirm password').options({ messages: { 'any.only': '{{#label}} does not match' } }), 
         phone: joi.number().integer().min(1000000000).message("Invalid mobile number").max(9999999999).message("Invalid mobile number").required(),
         gender: joi.string().valid("male", "female", "other").required(),
